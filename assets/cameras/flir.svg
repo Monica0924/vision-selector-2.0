@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="flirBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="flirBody" x1="0%" y1="0%" x2="100%" y2="90%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="flirRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <linearGradient id="flirLens" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="flirSensor" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#0284C7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <filter id="flirDrop" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="320" height="200" rx="14" fill="url(#flirBg)"/>
+  
+  <g opacity="0.18" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2 3">
+    <line x1="20" y1="50" x2="300" y2="50"/>
+    <line x1="20" y1="100" x2="300" y2="100"/>
+    <line x1="20" y1="150" x2="300" y2="150"/>
+    <line x1="80" y1="20" x2="80" y2="180"/>
+    <line x1="160" y1="20" x2="160" y2="180"/>
+    <line x1="240" y1="20" x2="240" y2="180"/>
+  </g>
+
+  <g filter="url(#flirDrop)">
+    <!-- Blackfly S Cube Body -->
+    <rect x="74" y="44" width="118" height="114" rx="10" fill="url(#flirBody)" stroke="#475569" stroke-width="1.2"/>
+    <rect x="74" y="44" width="118" height="6" rx="2" fill="url(#flirRed)"/>
+
+    <!-- Mounting screw recesses -->
+    <circle cx="84" cy="58" r="2.5" fill="#64748B"/>
+    <circle cx="182" cy="58" r="2.5" fill="#64748B"/>
+    <circle cx="84" cy="146" r="2.5" fill="#64748B"/>
+    <circle cx="182" cy="146" r="2.5" fill="#64748B"/>
+
+    <!-- Heat Dissipation Fins on side -->
+    <path d="M78 72 L82 72 M78 80 L82 80 M78 88 L82 88 M78 96 L82 96 M78 104 L82 104 M78 112 L82 112 M78 120 L82 120" stroke="#64748B" stroke-width="2"/>
+
+    <!-- Brand Label -->
+    <text x="133" y="78" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.2">TELEDYNE FLIR</text>
+    <text x="133" y="93" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#94A3B8" text-anchor="middle">Blackfly&#174; S USB 3.1</text>
+    
+    <!-- C-Mount Lens Extension -->
+    <rect x="190" y="60" width="36" height="82" rx="4" fill="url(#flirLens)" stroke="#334155" stroke-width="1"/>
+    <line x1="198" y1="60" x2="198" y2="142" stroke="#64748B" stroke-width="1.5"/>
+    <line x1="206" y1="60" x2="206" y2="142" stroke="#475569" stroke-width="1.5"/>
+    <line x1="214" y1="60" x2="214" y2="142" stroke="#64748B" stroke-width="1.5"/>
+
+    <!-- Lens Front & Aperture -->
+    <ellipse cx="226" cy="101" rx="10" ry="37" fill="#020617" stroke="#EF4444" stroke-width="1.5"/>
+    <ellipse cx="226" cy="101" rx="6" ry="26" fill="url(#flirSensor)"/>
+    <ellipse cx="224" cy="94" rx="2" ry="10" fill="#FFFFFF" opacity="0.65"/>
+
+    <!-- Industrial Locking Screws & LED -->
+    <circle cx="94" cy="140" r="3" fill="#10B981"/>
+    <rect x="108" y="137" width="22" height="7" rx="1.5" fill="#0F172A" stroke="#64748B" stroke-width="0.8"/>
+    <text x="138" y="143" font-family="monospace" font-size="7" fill="#94A3B8">LOCKING</text>
+  </g>
+
+  <!-- Precision Viewfinder Accents -->
+  <g stroke="#EF4444" stroke-width="1.2" opacity="0.7">
+    <path d="M25 35 L35 35 L35 45"/>
+    <path d="M295 35 L285 35 L285 45"/>
+    <path d="M25 165 L35 165 L35 155"/>
+    <path d="M295 165 L285 165 L285 155"/>
+  </g>
+</svg>

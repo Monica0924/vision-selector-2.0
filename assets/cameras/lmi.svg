@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lmiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <linearGradient id="lmiYellow" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#FACC15"/>
+      <stop offset="60%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="lmiBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="laserBeam" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="60%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </radialGradient>
+    <filter id="lmiDrop" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="320" height="200" rx="14" fill="url(#lmiBg)"/>
+  
+  <g opacity="0.18" stroke="#94A3B8" stroke-width="0.8" stroke-dasharray="2 3">
+    <line x1="20" y1="50" x2="300" y2="50"/>
+    <line x1="20" y1="100" x2="300" y2="100"/>
+    <line x1="20" y1="150" x2="300" y2="150"/>
+    <line x1="80" y1="20" x2="80" y2="180"/>
+    <line x1="160" y1="20" x2="160" y2="180"/>
+    <line x1="240" y1="20" x2="240" y2="180"/>
+  </g>
+
+  <g filter="url(#lmiDrop)">
+    <!-- Gocator Rugged Cast Aluminum 3D Housing -->
+    <rect x="50" y="52" width="220" height="96" rx="12" fill="url(#lmiYellow)" stroke="#CA8A04" stroke-width="1.5"/>
+
+    <!-- Rugged Heatsink Fins Top & Bottom -->
+    <rect x="65" y="47" width="190" height="7" rx="2" fill="url(#lmiBlack)"/>
+    <rect x="65" y="146" width="190" height="7" rx="2" fill="url(#lmiBlack)"/>
+
+    <!-- Central Optical Window & Laser Aperture (Triangulation Geometry) -->
+    <rect x="75" y="66" width="170" height="46" rx="8" fill="url(#lmiBlack)" stroke="#334155" stroke-width="1.2"/>
+    
+    <!-- Left 3D Camera Imager Window -->
+    <circle cx="102" cy="89" r="14" fill="#020617" stroke="#60A5FA" stroke-width="1.2"/>
+    <circle cx="102" cy="89" r="8" fill="url(#laserBeam)"/>
+    <ellipse cx="100" cy="85" rx="3" ry="5" fill="#FFFFFF" opacity="0.65"/>
+    <text x="102" y="122" font-family="monospace" font-size="6.5" font-weight="bold" fill="#0F172A" text-anchor="middle">RECEIVER 1</text>
+
+    <!-- Center Blue Laser Line Projector Aperture -->
+    <rect x="145" y="77" width="30" height="24" rx="4" fill="#020617" stroke="#3B82F6" stroke-width="1.5"/>
+    <line x1="148" y1="89" x2="172" y2="89" stroke="#60A5FA" stroke-width="2.5"/>
+    <text x="160" y="122" font-family="monospace" font-size="6.5" font-weight="bold" fill="#0F172A" text-anchor="middle">3D LASER</text>
+
+    <!-- Right 3D Camera Imager Window -->
+    <circle cx="218" cy="89" r="14" fill="#020617" stroke="#60A5FA" stroke-width="1.2"/>
+    <circle cx="218" cy="89" r="8" fill="url(#laserBeam)"/>
+    <ellipse cx="216" cy="85" rx="3" ry="5" fill="#FFFFFF" opacity="0.65"/>
+    <text x="218" y="122" font-family="monospace" font-size="6.5" font-weight="bold" fill="#0F172A" text-anchor="middle">RECEIVER 2</text>
+
+    <!-- Brand & 3D Sensor Identity -->
+    <text x="160" y="137" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="1">LMI GOCATOR 3D SMART SENSOR</text>
+
+    <!-- Ethernet & Power Indicators -->
+    <circle cx="62" cy="64" r="3" fill="#10B981"/>
+    <circle cx="62" cy="74" r="3" fill="#3B82F6"/>
+    <circle cx="258" cy="64" r="3" fill="#EAB308"/>
+  </g>
+
+  <!-- 3D Triangulation Laser Rays -->
+  <g stroke="#3B82F6" stroke-width="1" stroke-dasharray="3 3" opacity="0.75">
+    <line x1="160" y1="102" x2="160" y2="185"/>
+    <line x1="102" y1="103" x2="160" y2="185"/>
+    <line x1="218" y1="103" x2="160" y2="185"/>
+    <circle cx="160" cy="185" r="4" fill="#60A5FA"/>
+  </g>
+</svg>

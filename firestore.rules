@@ -1,0 +1,72 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdministrator() {
+      return request.auth != null && (
+        request.auth.token.admin == true ||
+        (
+          request.auth.token.email == 'admin@bgrneo.com' &&
+          request.auth.token.email_verified == true
+        )
+      );
+    }
+
+    function isValidNewProject(data, projectId) {
+      let p = data.project;
+      return data.type == 'project'
+        && data.keys().hasAll(['type', 'project', 'updatedAt'])
+        && data.keys().hasOnly(['type', 'project', 'updatedAt'])
+        && p is map
+        && p.keys().hasAll([
+          'id', 'company', 'name', 'code', 'year',
+          'category', 'progress', 'deadline', 'hold', 'stages'
+        ])
+        && p.id is string
+        && p.id == projectId
+        && p.id.size() >= 2
+        && p.id.size() <= 64
+        && p.company is string
+        && p.company.size() >= 1
+        && p.company.size() <= 100
+        && p.name is string
+        && p.name.size() >= 1
+        && p.name.size() <= 150
+        && p.code is string
+        && p.code.size() >= 2
+        && p.code.size() <= 40
+        && p.year is int
+        && p.year >= 2020
+        && p.year <= 2040
+        && p.category is string
+        && p.category.size() <= 50
+        && p.progress is int
+        && p.progress == 0
+        && p.deadline is string
+        && p.deadline.size() == 10
+        && p.hold is bool
+        && p.hold == false
+        && p.stages is list
+        && p.stages.size() == 11;
+    }
+
+    // Camera data is not written by the public app. Keep this reserved document
+    // protected if an administrator manages it separately.
+    match /project_workflow/camera_catalog {
+      allow read: if true;
+      allow create, update, delete: if isAdministrator();
+    }
+
+    match /project_workflow/{projectId} {
+      allow read: if true;
+
+      // Anyone may create a new project, but cannot overwrite an existing one.
+      allow create: if projectId != 'camera_catalog'
+                    && isValidNewProject(request.resource.data, projectId);
+
+      // Existing project changes and deletion require administrator authorization.
+      allow update, delete: if isAdministrator();
+    }
+  }
+}
